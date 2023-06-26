@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<select>
+    <option v-for="(user,i) in selectData">
+        {{user.user_name}}
+    </option>
+</select>
+</div>
+<script src="js/axios-0.18.0.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                selectData:[]
+            }
+        },
+        methods:{
+            selectAll(){
+                axios.get("http://localhost:8080/jredis_war/demo/selectAll").then(resp =>{
+                    this.selectData = resp.data;
+                })
+            }
+        },
+        mounted(){
+            this.selectAll();
+        }
+    })
+</script>
+</body>
+</html>

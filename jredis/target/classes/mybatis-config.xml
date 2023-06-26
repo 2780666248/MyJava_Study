@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--    不是德鲁伊我不用，不是白象我不吃-->
+    <dataSource>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql:///shoppingmall?useSSL=false&amp;useSeverPrepStmt=true"/>
+        <property name="username" value="root"/>
+        <property name="password" value="12345678"/>
+        <property name="initialSize" value="10"/>
+        <property name="maxActive" value="20"/>
+        <property name="maxWait" value="3000"/>
+    </dataSource>
+    <mappers>
+        <mapper resource="com/sym/mapper/UserMapper.xml"/>
+        <package name="com/sym/mapper"/>
+    </mappers>
+</configuration>
